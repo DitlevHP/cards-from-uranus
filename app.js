@@ -201,8 +201,81 @@ function saveState() {
 
 function registerServiceWorker() {
   if (!("serviceWorker" in navigator)) return;
-  window.addEventListener("load", () => {
-    navigator.serviceWorker.register("sw.js").catch(() => {});
+
+  window.addEventListener("load", async () => {
+    try {
+      const reg = await navigator.serviceWorker.register("sw.js");
+
+      // Hvis en ny version allerede ligger klar (waiting)
+      if (reg.waiting) showUpdateBanner(reg);
+
+      // Når en ny SW findes (installing -> installed)
+      reg.addEventListener("updatefound", () => {
+        const newWorker = reg.installing;
+        if (!newWorker) return;
+
+        newWorker.addEventListener("statechange", () => {
+          // installed + der var allerede en controller => opdatering
+          if (newWorker.state === "installed" && navigator.serviceWorker.controller) {
+            showUpdateBanner(reg);
+          }
+        });
+      });
+
+      // Når den nye SW tager kontrol, reload én gang
+      let refreshing = false;
+      navigator.serviceWorker.addEventListener("controllerchange", () => {
+        if (refreshing) return;
+        refreshing = true;
+        window.location.reload();
+      });
+    } catch {
+      // ignore
+    }
   });
 }
 
+
+function showUpdateBanner(reg) {
+  // Undgå flere bannere
+  if (document.getElementById("updateBanner")) return;
+
+  const banner = document.createElement("div");
+  banner.id = "updateBanner";
+  banner.style.position = "fixed";
+  banner.style.left = "12px";
+  banner.style.right = "12px";
+  banner.style.bottom = "12px";
+  banner.style.zIndex = "100000";
+  banner.style.background = "#15151e";
+  banner.style.border = "1px solid #242434";
+  banner.style.borderRadius = "16px";
+  banner.style.padding = "12px";
+  banner.style.boxShadow = "0 10px 30px rgba(0,0,0,.45)";
+  banner.style.display = "flex";
+  banner.style.alignItems = "center";
+  banner.style.justifyContent = "space-between";
+  banner.style.gap = "12px";
+
+  const text = document.createElement("div");
+  text.textContent = "Ny version klar";
+  text.style.fontSize = "14px";
+  text.style.opacity = "0.95";
+
+  const btn = document.createElement("button");
+  btn.textContent = "Opdatér";
+  btn.className = "primary"; // bruger din eksisterende knap-styling
+  btn.style.padding = "10px 12px";
+  btn.style.borderRadius = "14px";
+
+  btn.addEventListener("click", () => {
+    // Fortæl SW at den skal aktivere den nye version NU
+    if (reg.waiting) {
+      reg.waiting.postMessage({ type: "SKIP_WAITING" });
+    }
+  });
+
+  banner.appendChild(text);
+  banner.appendChild(btn);
+  document.body.appendChild(banner);
+}
