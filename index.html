@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="da">
 
@@ -6,8 +5,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
-  <title>Korttrækker uden url</title>
+  <!-- Navnet i browserfanen -->
+  <title>Korttrækker uden URL</title>
 
+  <!-- iPhone PWA fullscreen -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="Korttrækker">
@@ -19,6 +20,7 @@
 <body>
   <main class="app">
     <header class="top">
+      <!-- Navnet inde i appen -->
       <h1>Korttrækker uden URL</h1>
       <button id="btnPlayers" class="ghost">Spil</button>
     </header>
@@ -28,7 +30,7 @@
     </section>
 
     <section class="controls">
-        <button id="btnDraw" class="primary primaryBig">Træk kort</button>
+      <button id="btnDraw" class="primary primaryBig">Træk kort</button>
     </section>
 
     <section id="playersPanel" class="panel hidden" aria-hidden="true">
@@ -46,7 +48,7 @@
         <ul id="playersList" class="playersList"></ul>
 
         <div class="gameActions">
-            <button id="btnShuffle" class="danger">Bland kort (restart)</button>
+          <button id="btnShuffle" class="danger">Bland kort (restart)</button>
         </div>
 
         <p class="hint">
@@ -57,7 +59,7 @@
 
     <footer class="footer">
       Offline • Deck-mode • Unikke navne pr kort
-    </footer> 
+    </footer>
   </main>
 
   <script src="app.js"></script>
