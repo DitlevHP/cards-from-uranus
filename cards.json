@@ -1,10 +1,27 @@
 [
   "{{A}} drikker 2 tåre",
-  "Bon til {{A}}",
-  "Alle undtagen {{A}} drikker 1 tår",
-  "{{A}} og {{B}} drikker en tår",
-  "Alle der skal i Dream City i aften, drik 5 tåre!",
-  "Kategori! {{A}} vælger en kategori - taberen drikker 5 tåre",
+  "Alle undtagen {{A}} drikker 2 tåre",
   "{{A}} må uddele fem tåre",
-  "{{A}} skal lave et valgfrit shot til {{B}}"
+  "{{A}} og {{B}} drikker 2 tåre",
+
+  "{{A}} skal lave et valgfrit shot til {{B}}",
+
+  "Bon til {{A}}",
+  "Dobbelbon til {{A}}",
+  "{{A}} må blande en valgfri bon til {{B}}",
+
+  "Alle der skal i Dream City i aften, drik 5 tåre!",
+  "Alle der har været her siden dag 1, uddel 3 tåre til de mindre hårdføre",
+  "Alle der har været i dag, drik 5 tåre. Trust me, det hjælper",
+  "Alle der bor i Camp Uranus uddeler 3 tåre!!",
+
+  "Kategori! {{A}} vælger en kategori - taberen drikker 5 tåre",
+  "Kategori! Kunstere på Roskilde26. {{A}} starter",
+  
+  "Hvem har musikken?? Sæt pisk mig hårdt på. {{A}} starter med pisken",
+  "Hvem har musikken?? Skift lige sang",
+  "Hvem har musikken?? {{A}} skal lige vælge den næste sang",
+  
+  "Hvem har en ny øl til oplæseren?? Bund den du er i gang med"
+
 ]
