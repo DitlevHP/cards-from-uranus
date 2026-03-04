@@ -1,4 +1,6 @@
-const CACHE_NAME = "korttraekker-cache-v1";
+"Følgende vX ændres ved hver relevant ændring - så opdatere alle apps."
+
+const CACHE_NAME = "korttraekker-cache-v2";
 const ASSETS = [
   "./",
   "./index.html",
