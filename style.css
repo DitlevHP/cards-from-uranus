@@ -80,3 +80,10 @@ input { border-radius: 12px; border: 1px solid #2a2a3d; background: #0f0f16; col
   position: relative;
   z-index: 0;
 }
+
+.panelInner {
+  max-height: calc(100vh - 24px); /* 12px padding top + 12px bottom fra .panel */
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; /* smooth scroll på iPhone */
+}
+
