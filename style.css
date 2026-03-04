@@ -71,3 +71,12 @@ input { border-radius: 12px; border: 1px solid #2a2a3d; background: #0f0f16; col
   padding: 12px 14px;
   font-size: 16px;
 }
+
+.panel {
+  z-index: 9999;
+}
+
+.footer {
+  position: relative;
+  z-index: 0;
+}

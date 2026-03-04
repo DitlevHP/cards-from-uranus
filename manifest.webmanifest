@@ -1,6 +1,6 @@
 {
-  "name": "Korttrækker",
-  "short_name": "Korttrækker",
+  "name": "Cards from Uranus",
+  "short_name": "Cards f. Uranus",
   "start_url": "/Traek-Kort/",
   "scope": "/Traek-Kort/",
   "display": "standalone",
