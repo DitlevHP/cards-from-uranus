@@ -1,4 +1,6 @@
-const CACHE_NAME = "korttraekker-cache-v1.7";
+// Ændre her ved opdateringer
+
+const CACHE_NAME = "korttraekker-cache-v2.0";
 const ASSETS = [
   "./",
   "./index.html",
